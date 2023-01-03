@@ -1,0 +1,143 @@
+body {
+  font-family: "pretendard";
+  font-size: 21px;
+  color: #000;
+  line-height: 1.6;
+}
+
+#selc-hd {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+#selc-hd .wrapper {
+  height: 100px;
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  #selc-hd .wrapper {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    background: #fff;
+    box-sizing: border-box;
+  }
+}
+#selc-hd .wrapper .logo {
+  position: absolute;
+  max-width: 186px;
+  top: 50%;
+  transform: translateY(-30%);
+}
+#selc-hd .wrapper .logo img {
+  width: 100%;
+}
+#selc-hd .wrapper #nav {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 90px;
+  align-items: start;
+  margin: 0px 400px;
+  position: relative;
+}
+@media screen and (max-width: 1800px) {
+  #selc-hd .wrapper #nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: center;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  #selc-hd .wrapper #nav {
+    display: block;
+  }
+}
+#selc-hd .wrapper #nav li {
+  line-height: 100px;
+  font-size: 18px;
+  display: inline-block;
+}
+#selc-hd .wrapper #nav li a {
+  color: #000;
+}
+#selc-hd .wrapper #nav li .sub {
+  display: none;
+  background-color: #e9eff7;
+  margin-bottom: 140px;
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+}
+#selc-hd .wrapper #nav li .sub li {
+  line-height: 33px;
+}
+#selc-hd .wrapper .ham-btn {
+  position: absolute;
+  right: 110px;
+  top: 50%;
+  transform: translateY(-40%);
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 17px;
+  text-indent: -9999px;
+}
+#selc-hd .wrapper .ham-btn .bda {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+}
+#selc-hd .wrapper .ham-btn .bdb {
+  position: absolute;
+  bottom: 7px;
+  right: 0;
+  height: 3px;
+  width: 70%;
+  background-color: #000;
+}
+#selc-hd .wrapper .ham-btn .bdc {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+}
+#selc-hd .wrapper .ham-btn .ham {
+  transition: all 0.3s;
+}
+#selc-hd .wrapper .ham-btn:hover .ham {
+  width: 100%;
+}
+
+#container .main-banner {
+  margin-top: 100px;
+  overflow: hidden;
+  max-height: 960px;
+  position: relative;
+}
+#container .main-banner .banner {
+  background-color: #00f;
+  display: flex;
+  justify-content: space-between;
+  gap: 0;
+  align-items: center;
+  width: 400%;
+}
+#container .main-banner .banner li .video-box {
+  width: 100%;
+}
+#container .main-banner .banner li .video-box video {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

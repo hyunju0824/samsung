@@ -1,0 +1,40 @@
+@charset "utf-8";
+//변수선언 글자색상, 반응형, 글자크기
+$wh: #fff;
+$bk: #000;
+$dk-grey: #222;
+$md-grey: #666;
+$lt-grey: #999;
+$lt-blue: #e9eff7;
+$md-blue: #0c4da2;
+$fz: 21px;
+$fz-h1: 68px;
+$m767: 767px;
+$t768: 768px;
+$t1279: 1279px;
+$pc1280: 1280px;
+$pc1800: 1800px;
+
+//mixin 옆으로 붙이기
+@mixin flexWrap($justify: space-between, $gap: 50px, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    gap: $gap;
+    align-items: $align;
+}
+
+//위치
+@mixin pos ($pos: relative, $top: null, $right: null, $bottom: null, $left: null, $zindex: null) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $zindex;
+}
+
+@mixin center($width) {
+    max-width: $width;
+    width: 100%;
+    margin: 0 auto;
+}

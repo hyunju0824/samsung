@@ -1,0 +1,122 @@
+@import "base";
+
+/* 1. 모바일 */
+@media screen and (max-width: 767px) {
+
+}
+
+/* 2. 태블릿부터 */
+@media screen and (min-width: 768px) {}
+
+/* 3. 태블릿만 */
+@media screen and (min-width: 768px) and (max-width: 1279px) {}
+
+/* 4. PC부터 */
+@media screen and (min-width: 1280px)  {
+  #m-selc-nav {
+    display: none;
+  }
+  #selc-hd{
+    height: 100px;
+    overflow: hidden;
+    transition: 0.3s;
+    &.show {
+      @include pos($pos: fixed);
+      height: 100px;
+      background-color: #fff;
+    }
+    &.on {
+      height: 400px;
+      box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    }
+    .logo {
+      top: 40px;
+      width: 240px;
+      height: 26px;
+    }
+    
+    #selc-nav a {
+      color: $bk;
+    }
+    &.show #selc-nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+    
+    .wh-bg {
+      width: 100%;
+      height: 0;
+      background-color: $wh;
+      overflow: hidden;
+      @include pos($pos: absolute, $top: 0, $left: 0, $zindex: -1);
+      transition: height 0.3s;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: #f0f0f0;
+        @include pos($pos: absolute, $top: 100px, $left: 0);
+      }
+    }
+    &.on .wh-bg {
+      height: 400px;
+    }
+    
+  }
+  #selc-nav {
+    width: 860px;
+    display: none;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 0;
+    margin: auto;
+    text-align: center;
+    transition: height 0.6s;
+    .depth1 {
+      width: 25%;
+      font-size: 18px;
+      a {
+        display: block;
+        color: #000;
+      }
+      > a {
+        line-height: 100px;
+        color: $wh;
+      }
+      .depth2 {
+        display: block;
+        line-height: 48px;
+        height: 300px;
+        margin-bottom: 140px;
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        transition: background-color 0.2s;
+        &::before {
+          content: '';
+          display: block;
+          height: 2px;
+          background-color: transparent;
+        }
+      }
+      &.on > a {
+        font-weight: 700;
+      }
+      &.on .depth2 {
+        //background-color: $lt-blue;
+      }
+      &.on .depth2::before {  
+        background-color: $md-blue;
+      }
+    }
+  }
+  .ham-btn {
+    top: 40px;
+  }
+}

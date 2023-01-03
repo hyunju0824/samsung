@@ -1,0 +1,147 @@
+@charset "UTF-8";
+body.hidden {
+  overflow: hidden;
+}
+
+.skip a {
+  position: absolute;
+  width: 100%;
+  line-height: 50px;
+  text-align: center;
+  top: -100px;
+}
+.skip a::focus {
+  top: 0;
+}
+
+#selc-hd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+#selc-hd.show {
+  position: fixed;
+  background-color: #fff;
+}
+#selc-hd .wrapper {
+  height: 100px;
+}
+#selc-hd.show {
+  height: 68px;
+}
+#selc-hd .logo {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  width: 186px;
+  height: 21px;
+  left: 20px;
+  background: url("../images/logo_wh.png") left center/contain no-repeat;
+}
+#selc-hd.show .logo {
+  background-image: url("../images/logo.png");
+}
+#selc-hd .logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#selc-hd.show .ham-btn .ham {
+  background-color: #000;
+}
+
+#selc-nav {
+  display: none;
+}
+
+#m-selc-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  width: calc(100% - 50px);
+  padding: 0 20px;
+  padding-top: 68px;
+  overflow: auto;
+  background-color: #fff;
+  transition: right 0.3s;
+}
+#m-selc-nav.show {
+  right: 0;
+}
+#m-selc-nav a {
+  display: block;
+}
+#m-selc-nav .m-depth1 {
+  position: relative;
+}
+#m-selc-nav .m-depth1 > a {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 72px;
+  color: #bk;
+}
+#m-selc-nav .m-depth1.active > a {
+  color: #0c4da2;
+}
+#m-selc-nav .m-depth1.active .m-depth2 {
+  height: auto;
+}
+#m-selc-nav .m-depth2 {
+  display: none;
+  font-size: 18px;
+  line-height: 40px;
+}
+#m-selc-nav .m-depth2 a {
+  color: #666;
+}
+#m-selc-nav .m-depth2 a:hover {
+  color: #222;
+}
+
+.ham-btn {
+  position: absolute;
+  right: 20px;
+  top: 24px;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+}
+.ham-btn.close .ham {
+  background-color: #000;
+  width: 100%;
+}
+.ham-btn.close .bda {
+  transform: translateY(0) rotate(45deg);
+}
+.ham-btn.close .bdb {
+  opacity: 0;
+}
+.ham-btn.close .bdc {
+  transform: translateY(0) rotate(-45deg);
+}
+.ham-btn .ham {
+  position: absolute;
+  top: calc(50% - 2px);
+  right: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  transition: 0.3s;
+}
+.ham-btn .bda {
+  transform: translateY(-8px);
+}
+.ham-btn .bdb {
+  width: 70%;
+}
+.ham-btn .bdc {
+  transform: translateY(8px);
+}
+.ham-btn:hover .ham {
+  width: 100% !important;
+}
+
+/* 2. 푸터 *//*# sourceMappingURL=common.css.map */

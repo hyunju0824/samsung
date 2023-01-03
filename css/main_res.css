@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+/* 1. 모바일 */
+@media screen and (max-width: 767px) {
+    .hd-3 {
+        display: none;
+    }
+}
+
+/* 2. 태블릿부터 */
+@media screen and (min-width: 768px) {}
+
+/* 3. 태블릿만 */
+@media screen and (min-width: 768px) and (max-width: 1279px) {}
+
+/* 4. PC부터 */
+@media screen and (min-width: 1280px)  {}

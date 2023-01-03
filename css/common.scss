@@ -1,0 +1,143 @@
+@import "base";
+body {
+  &.hidden {
+    overflow: hidden;
+  }
+}
+// 0. 바로가기
+.skip {
+    a {
+        position: absolute;
+        width: 100%;
+        line-height: 50px;
+        text-align: center;
+        top:-100px;
+        &::focus {
+            top:0;
+        }
+    }
+}
+// 1. 헤더 
+#selc-hd {
+  //background-color: $wh;
+  @include pos($pos: absolute, $top: 0, $left: 0, $zindex: 1000);
+  width: 100%;
+  &.show {
+    position: fixed;
+    background-color: #fff;
+      // background-color: rgba(11,77,162,1);
+  }
+  .wrapper {
+    height: 100px;
+  }
+  &.show {
+    height: 68px;
+  }
+  .logo {
+    @include pos($pos: absolute, $top: 24px, $left: 0);
+    width: 186px;
+    height: 21px;
+    left: 20px;
+    background: url('../images/logo_wh.png') left center / contain no-repeat;
+  }
+  &.show .logo {
+    background-image: url('../images/logo.png');
+  }
+  .logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  &.show .ham-btn .ham {
+    background-color: $bk;
+  }
+}
+#selc-nav {
+  display: none;
+}
+#m-selc-nav {
+  @include pos ($pos: fixed, $top: 0, $bottom: 0, $right: -100%);
+  width: calc(100% - 50px);
+  padding: 0 20px;
+  padding-top: 68px;
+  overflow: auto;
+  background-color: $wh;
+  transition: right 0.3s;
+  &.show {
+    right: 0;
+  }
+  a {
+    display: block;
+  }
+  .m-depth1 {
+    position: relative;
+    > a {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 72px;
+      color: #bk;
+    }
+    &.active > a {
+      color: $md-blue;
+    }
+    &.active .m-depth2 {
+      height: auto;
+    }
+  }
+  .m-depth2 {
+    display: none;
+    font-size: 18px;
+    line-height: 40px;
+    a {
+      color: $md-grey;
+    }
+    a:hover {
+      color: $dk-grey;
+    }
+  }
+}
+.ham-btn {
+  position: absolute;
+  right: 20px;
+  top: 24px;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  &.close .ham {
+    background-color: $bk;
+    width: 100%;
+  }
+  &.close .bda {
+    transform: translateY(0) rotate(45deg);
+  }
+  &.close .bdb {
+    opacity: 0;
+  }
+  &.close .bdc {
+    transform: translateY(0) rotate(-45deg);
+  }
+  .ham {
+    position: absolute;
+    top: calc(50% - 2px);
+    right: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    -webkit-transition: width 0.3s;
+    transition: 0.3s;
+  }
+  .bda {
+    transform: translateY(-8px);
+  }
+  .bdb {
+    width: 70%;
+  }
+  .bdc {
+    transform: translateY(8px);
+  }
+  &:hover .ham {
+    width: 100% !important;
+  }
+}
+
+/* 2. 푸터 */

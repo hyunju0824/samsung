@@ -1,0 +1,201 @@
+//변수선언
+//글자색상, 반응형, 글자크기
+$흰색: #fff;
+$검정색: #000;
+$연파랑: #e9eff7;
+$진파랑: #0c4da2;
+$메뉴: 18px;
+$기본크기-본문: 21px;
+$본문제목: 68px;
+$m767: 767px;
+$m480: 480px;
+
+//mixin 옆으로 붙이기
+@mixin flexWrap($justify: space-between, $gap: 50px, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    gap: $gap;
+    align-items: $align;
+}
+
+//위치
+@mixin pos ($pos: relative, $top: null, $right: null, $bottom: null, $left: null, $zindex: null) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $zindex;
+}
+
+//반응형
+@mixin respond($res) {
+    @media screen and (max-width:$res) {
+        @content;
+    }
+}
+
+@mixin center($width) {
+    max-width: $width;
+    width: 100%;
+    margin: 0 auto;
+    // background-color: rgba(255, 0, 0, 0.2);
+}
+
+body {
+    font-family: "pretendard";
+    font-size: $기본크기-본문;
+    color: $검정색;
+    line-height: 1.6;
+}
+
+//header
+#selc-hd {
+    background-color: #fff;
+
+    @include pos($pos: fixed, $top: 0, $zindex: 1000);
+    width: 100%;
+
+    .wrapper {
+        height: 100px;
+        @include center(1700px);
+
+        @include respond($m767) {
+            @include center(100%);
+            padding: 0 10px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            position: absolute;
+            max-width: 186px;
+            // height: 100px;
+            top: 50%;
+            transform: translateY(-30%);
+            img {
+                width: 100%;
+            }
+        }
+
+        #nav {
+            text-align: center;
+            @include flexWrap($gap: 90px, $align:start);
+                margin: 0px 400px;
+
+                @include respond(1800px) {
+                    @include flexWrap();
+
+                    margin-left: 0;
+                }
+
+                @include respond($m767) {
+                    display: block;
+                }
+
+            position: relative;
+            li {
+                line-height: 100px;
+                font-size: $메뉴;
+                // background-color: #f11;
+                display: inline-block;
+                a {
+                    color: $검정색;
+                    // background-color: #000;
+                    
+                }
+
+                .sub {
+                    display: none;
+                    // display: flex;
+                    background-color: $연파랑;
+                    margin-bottom: 140px;
+                    font-size: 16px;
+                    width: 100%;
+                    text-align: center;
+                    flex-direction: column;
+                    li {
+                    line-height: 33px;
+                        
+                        a {}
+                    }
+                }
+            }
+
+        }
+        .ham-btn {
+            position: absolute;
+            right: 110px;
+            top: 50%;
+            transform: translateY(-40%);
+            // margin: 15px;
+            // margin-top: 40px;
+            // display: inline-block;
+            // background-color: #000;
+            background-repeat: no-repeat; 
+            width: 22px;
+            height: 17px;
+            text-indent: -9999px;
+            .bda{
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 3px;
+                width: 100%;
+                background-color: #000;
+            }
+            .bdb{
+                position: absolute;
+                bottom: 7px;
+                right: 0;
+                height: 3px;
+                width: 70%;
+                background-color: #000;
+            }
+            .bdc{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                height: 3px;
+                width: 100%;
+                background-color: #000;
+            }
+            .ham{
+                transition: all 0.3s;
+            }
+        }
+        .ham-btn:hover .ham{
+            width: 100%;
+        }
+
+    }
+}
+
+//#container
+#container{
+    .main-banner{
+        // background-color: #f0f;
+        margin-top: 100px;
+        overflow: hidden;
+        max-height: 960px;
+        @include pos();
+
+        .banner {
+            background-color: #00f;
+            @include flexWrap($gap: 0);
+            width: 400%;
+
+            li {
+                
+                .video-box {
+                    width: 100%;
+                    video {
+                        width: 100%;
+                    }
+                }
+                .text-box {}
+
+            }
+        }
+    }
+}
